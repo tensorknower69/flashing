@@ -5,5 +5,33 @@ Running it will open up a window flashing random colors.
 
 Be warned that the flashing may harm you or others, and I'm not responsible for any damage caused.
 
+# Usage
+
+For help:
+
+```bash
+flashing -h
+```
+
+Fullscreen mode:
+
+```bash
+flashing -f
+flashing -f -t 'my window title'
+```
+
+Windowed mode:
+
+```bash
+flashing -x 800 -y 600
+flashing -x 800 -y 600 -t 'my window title'
+```
+
+# Installation
+
+```bash
+sudo make install
+```
+
 # Why
 Yes.
