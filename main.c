@@ -10,11 +10,14 @@
 #include <time.h>
 
 #define NO_VALUE -1
-#define PROG "flashing"
+
+#ifndef PROGNAME
+#define PROGNAME "flashing"
+#endif
 
 const char* usage =
-	"usage: " PROG " [-f] [-x width] [-y height] [-t title], to run fullscreen (use -f) or windowed\n"
-	"       " PROG " -h, for help\n"
+	"usage: " PROGNAME " [-f] [-x width] [-y height] [-t title], to run fullscreen (use -f) or windowed\n"
+	"       " PROGNAME " -h, for help\n"
 	;
 
 float rand_rgb_float() {
@@ -28,11 +31,11 @@ int optarg_pnum_or_die(char name) {
 	char* dummy = optarg;
 	long int value = strtol(optarg, &dummy, 10);
 	if (errno != 0) {
-		fprintf(stderr, PROG ": -%c: strtol failed, unable to parse value", name);
+		fprintf(stderr, PROGNAME ": -%c: strtol failed, unable to parse value", name);
 		exit(1);
 	}
 	if (!(value > 0 && value <= INT_MAX)) {
-		fprintf(stderr, PROG ": -%c: (value > 0 && value <= INT_MAX) is false", name);
+		fprintf(stderr, PROGNAME ": -%c: (value > 0 && value <= INT_MAX) is false", name);
 		exit(1);
 	}
 	return (int) value;
@@ -92,7 +95,7 @@ int main(int argc, char **argv) {
 	}
 
 	if (title == NULL)
-		title = PROG;
+		title = PROGNAME;
 
 	GLFWwindow* win = glfwCreateWindow(width, height, title, mon, NULL);
 	glfwMakeContextCurrent(win);
