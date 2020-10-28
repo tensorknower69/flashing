@@ -88,7 +88,7 @@ int main(int argc, char **argv) {
 		height = mode->height;
 	} else {
 		if (width == NO_VALUE || height == NO_VALUE) {
-			fprintf(stderr, "width or/and height aren't specified, or just use -f for fullscreen mode\n");
+			fprintf(stderr, "width or/and height aren't specified, -h for help\n");
 			exit(1);
 		}
 		mon = NULL;
