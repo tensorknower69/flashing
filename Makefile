@@ -1,7 +1,7 @@
 EXE = flashing
 CC = gcc
 LDFLAGS = -lGL -lglfw
-CFLAGS = -DPROGNAME=\"$(EXE)\"
+CFLAGS = -DPROG_NAME=\"$(EXE)\"
 PREFIX = /usr/local
 
 SRC = main.c
