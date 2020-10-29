@@ -10,6 +10,7 @@ For help:
 
 ```bash
 flashing -h
+man 1 flashing
 ```
 
 Fullscreen mode:
