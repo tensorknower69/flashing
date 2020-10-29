@@ -88,7 +88,7 @@ int main(int argc, char **argv) {
 		height = mode->height;
 	} else {
 		if (width == NO_VALUE || height == NO_VALUE) {
-			fprintf(stderr, "Window width or/and height aren't specified, use -h for help\n");
+			fprintf(stderr, usage);
 			exit(1);
 		}
 		mon = NULL;
