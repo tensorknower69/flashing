@@ -1,0 +1,45 @@
+.TH flashing 1 2020-10-29
+.SH NAME
+flashing \- opens a window flashing random colors
+.SH SYNOPSIS
+.B flashing
+.RB [ \-h ]
+.RB [ \-f ]
+.RB [ \-x
+.IR width ]
+.RB [ \-y
+.IR height ]
+.RB [ \-t
+.IR title ]
+.SH DESCRIPTION
+\fBflashing\fR is a simple program which opens up a \fBGLFW\fR window flashing random colors using \fBOpenGL\fR.
+.SH OPTIONS
+.TP
+.B \-h
+print usage
+.TP
+.B \-f
+turn on \fBFullscreen Mode\fR.
+.TP
+.BI \-x " width"
+turn on \fBWindowed Mode\fR. and set width for the window.
+.TP
+.BI \-y " height"
+turn on \fBWindowed Mode\fR. and set height for the window.
+.TP
+.BI \-t " title"
+set a title for the window, can be used in both modes.
+.SH MODES
+.TP
+.B Fullscreen Mode
+The window will be a fullscreen window
+.TP
+.B Windowed Mode
+The window will be a regular window with size \fIwidth\fR x \fIheight\fR.
+If both modes are enabled, only \fBFullscreen Mode\fR will be chosen.
+.SH WARNING
+The flashing of colors may trigger epilepsy, and I AM NOT RESPONSIBLE FOR ANY DAMAGE CAUSED, so be careful.
+.SH AUTHORS
+tensorknower69 <62006583+tensorknower69@users.noreply.github.com>
+.SH BUGS
+Report them on https://github.com/tensorknower69/flashing/issues.
