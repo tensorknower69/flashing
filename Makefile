@@ -1,4 +1,3 @@
-EXE = flashing
 CC = gcc
 LDFLAGS = -lGL -lglfw
 CFLAGS = -Wall
@@ -7,9 +6,9 @@ PREFIX = /usr/local
 SRC = main.c
 OBJ = $(SRC:.c=.o)
 
-all: $(EXE)
+all: flashing
 
-$(EXE): $(OBJ)
+flashing: $(OBJ)
 	$(CC) $(LDFLAGS) -o $@ $(OBJ)
 
 %.o: %.c
@@ -17,11 +16,13 @@ $(EXE): $(OBJ)
 
 install: all
 	mkdir -p $(PREFIX)/bin
-	install -m 775 $(EXE) $(PREFIX)/bin/$(EXE)
+	install -m 775 flashing $(PREFIX)/bin/flashing
+	mkdir -p $(PREFIX)/share/man/man1
+	install -m 664 flashing.1 $(PREFIX)/share/man/man1/flashing.1
 
 uninstall:
-	rm -f $(PREFIX)/bin/$(EXE)
+	rm -f $(PREFIX)/bin/flashing
+	rm -f $(PREFIX)/share/man/man1/flashing.1
 
 clean:
-	rm -f $(EXE)
-	rm -f $(OBJ)
+	rm -f flashing $(OBJ)

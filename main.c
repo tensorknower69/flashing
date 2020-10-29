@@ -95,7 +95,7 @@ int main(int argc, char **argv) {
 	GLFWwindow* win = glfwCreateWindow(width, height, title, mon, NULL);
 	glfwMakeContextCurrent(win);
 
-	fprintf(stdout, "Window info: title='%s' fullscreen=%d, size=%dx%d\n", title, flag_fullscreen, width, height);
+	fprintf(stdout, "Window info: fullscreen=%d, size=(%d,%d), title=\"%s\"\n", flag_fullscreen, width, height, title);
 	fprintf(stdout, "Press 'q' to close\n");
 
 	srand(time(NULL));
