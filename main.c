@@ -8,11 +8,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <unistd.h>
 
 #define NO_VALUE -1
 
 const char* usage =
-	"usage: flashing [-h] [-f] [-x width] [-y height] [-t title]\n"
+	"usage: flashing [-v] [-h] [-f] [-x width] [-y height] [-t title]\n"
 	;
 
 float rand_rgb_float() {
@@ -38,15 +39,20 @@ int optarg_pnum_or_die(char name) {
 
 int main(int argc, char **argv) {
 	bool flag_fullscreen = false;
-	bool flag_help = false;
 	const char* title = NULL;
 	int width = NO_VALUE, height = NO_VALUE;
 
 	char c;
-	while((c = getopt(argc, argv, "hfx:y:t:")) != -1) {
+	while((c = getopt(argc, argv, "vhfx:y:t:")) != -1) {
 		switch (c) {
+			case 'v':
+				fprintf(stdout, "0.1.0.0\n");
+				exit(0);
+				break;
 			case 'h':
-				flag_help = true;
+				execlp("man", "man", "1", "flashing", NULL);
+				fprintf(stderr, "Unable to run 'man 1 flashing', quitting\n");
+				exit(1);
 				break;
 			case 'f':
 				flag_fullscreen = true;
@@ -66,11 +72,6 @@ int main(int argc, char **argv) {
 				exit(1);
 				break;
 		}
-	}
-
-	if (flag_help) {
-		fprintf(stdout, usage);
-		exit(0);
 	}
 
 	glfwInit();
