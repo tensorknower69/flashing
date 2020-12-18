@@ -6,6 +6,8 @@ PREFIX = /usr/local
 SRC = main.c
 OBJ = $(SRC:.c=.o)
 
+.PHONY: install uninstall clean
+
 all: flashing
 
 flashing: $(OBJ)
