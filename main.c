@@ -45,7 +45,7 @@ int main(int argc, char **argv) {
 	while((c = getopt(argc, argv, "vfx:y:t:")) != -1) {
 		switch (c) {
 			case 'v':
-				printf("0.2.0.1\n");
+				printf(VERSION "\n");
 				exit(0);
 				break;
 			case 'f':

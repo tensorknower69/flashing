@@ -1,7 +1,8 @@
-CC = gcc
+CC ?= gcc
 LDFLAGS = -lGL -lglfw
-CFLAGS = -Wall
-PREFIX = /usr/local
+VERSION = 0.2.0.2
+CFLAGS = -Wall -DVERSION=\"$(VERSION)\"
+PREFIX ?= /usr/local
 
 SRC = main.c
 OBJ = $(SRC:.c=.o)
