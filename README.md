@@ -32,13 +32,13 @@ flashing -x 800 -y 600 -t 'my window title'
 To install:
 
 ```bash
-sudo make install
+# make install
 ```
 
 To uninstall:
 
 ```bash
-sudo make uninstall
+# make uninstall
 ```
 
 # Why
