@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
 	int width = NO_VALUE, height = NO_VALUE;
 
 	char c;
-	while((c = getopt(argc, argv, "vhfx:y:t:")) != -1) {
+	while((c = getopt(argc, argv, "vfx:y:t:")) != -1) {
 		switch (c) {
 			case 'v':
 				printf("0.2.0.0\n");
