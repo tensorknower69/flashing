@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
 	while((c = getopt(argc, argv, "vhfx:y:t:")) != -1) {
 		switch (c) {
 			case 'v':
-				fprintf(stdout, "0.1.0.0\n");
+				fprintf(stdout, "0.2.0.0\n");
 				exit(0);
 				break;
 			case 'f':
