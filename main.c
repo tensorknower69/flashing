@@ -1,4 +1,3 @@
-#include <GL/gl.h>
 #include <GLFW/glfw3.h>
 #include <errno.h>
 #include <getopt.h>
@@ -46,7 +45,7 @@ int main(int argc, char **argv) {
 	while((c = getopt(argc, argv, "vhfx:y:t:")) != -1) {
 		switch (c) {
 			case 'v':
-				fprintf(stdout, "0.2.0.0\n");
+				printf("0.2.0.0\n");
 				exit(0);
 				break;
 			case 'f':
@@ -63,7 +62,7 @@ int main(int argc, char **argv) {
 				break;
 			case '?':
 			default:
-				fprintf(stderr, usage);
+				fprintf(stderr, "%s\n", usage);
 				exit(1);
 				break;
 		}
@@ -79,7 +78,7 @@ int main(int argc, char **argv) {
 		height = mode->height;
 	} else {
 		if (width == NO_VALUE || height == NO_VALUE) {
-			fprintf(stderr, usage);
+			fprintf(stderr, "%s\n", usage);
 			exit(1);
 		}
 		mon = NULL;
@@ -91,8 +90,8 @@ int main(int argc, char **argv) {
 	GLFWwindow* win = glfwCreateWindow(width, height, title, mon, NULL);
 	glfwMakeContextCurrent(win);
 
-	fprintf(stdout, "Window info: fullscreen=%d, size=(%d,%d), title=\"%s\"\n", flag_fullscreen, width, height, title);
-	fprintf(stdout, "Press 'q' to close\n");
+	printf("Window info: fullscreen=%d, size=(%d,%d), title=\"%s\"\n", flag_fullscreen, width, height, title);
+	printf("Press 'q' to close\n");
 
 	srand(time(NULL));
 	float r, g, b;
