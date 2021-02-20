@@ -13,7 +13,7 @@
 #define NO_VALUE -1
 
 const char* usage =
-	"usage: flashing [-v] [-h] [-f] [-x width] [-y height] [-t title]\n"
+	"usage: flashing [-v] [-f] [-x width] [-y height] [-t title]\n"
 	;
 
 float rand_rgb_float() {
@@ -48,11 +48,6 @@ int main(int argc, char **argv) {
 			case 'v':
 				fprintf(stdout, "0.1.0.0\n");
 				exit(0);
-				break;
-			case 'h':
-				execlp("man", "man", "1", "flashing", NULL);
-				fprintf(stderr, "Unable to run 'man 1 flashing', quitting\n");
-				exit(1);
 				break;
 			case 'f':
 				flag_fullscreen = true;
